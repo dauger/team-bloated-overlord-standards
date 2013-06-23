@@ -13,7 +13,7 @@ The following naming conventions should be adhered to on all new codebases. Try 
 
 * Use camelCasing when naming private fields, and local variables.
 * Use PascalCasing when naming classes, structs, enums, methods, events, delegates, property names, public fields, and constants.  
-* Prefix private fields with a "\_";
+* Prefix private fields with a "\_"
 * Use unabbreviated meaningful names. Exception: single letter variable names for loop counters and lambda parameters are OK.
 * Err or the side of names being too long rather than too short.
 * Abbreviations of two letters in length should have both letters capitalized. example: ```var userID = 1;```
