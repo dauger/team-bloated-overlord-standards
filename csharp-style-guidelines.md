@@ -86,7 +86,7 @@ Examples:
 * Try to keep the width of your code narrow enough to avoid the need to scroll horizontally on a typical setup (16x10 with explorer panes open on both sides). 
 
 ## Error Handling
-* Always use a top-level handler to catch and log unhandled exceptions.
+* Always use a top-level handler to catch and log unhandled exceptions at the application seam (in the global.asax.cs, in the main method, etc...)
 * Do not catch exceptions in application code unless you plan to do something about them. Defer catastrophic error handling and logging to a top level handler at the application seam (in the global.asax.cs, in the main method, etc...).	
 
 ## Builds and Configuration
