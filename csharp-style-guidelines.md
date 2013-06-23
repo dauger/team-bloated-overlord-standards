@@ -23,7 +23,7 @@ The following naming conventions should be adhered to on all new codebases. Try 
 ## General Coding Conventions
 * Avoid files for "global" consts and enums. Try to hang constants and enums off of a relevant class. If this is not possible, create separate files per logical grouping. Example: ConsumerConstants, ProductConstants, etc...
 * Always use system aliases for "primitive" types. Example: use "string" instead of "String".
-* Prefer collections over arrays.
+* Prefer collections over arrays, unless there is a specific performance problem.
 * Curly braces should always be on the next line, except within razor view templates, auto properties, empty constructors, or one-liner lambdas.
 * Always use braces with if statements.
 * Use the var keyword whenever possible to reduce "type noise" and to reduce the impact of refactoring. It is OK to specify the type if you think the code needs it to avoid a misunderstanding.
