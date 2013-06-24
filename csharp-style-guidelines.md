@@ -94,9 +94,3 @@ Examples:
 * Do not hard code values that would benefit from being in configuration.
 * Do not store sensitive information in clear text in config files. Prefer retrieving such values out of a config database or service. If the values must be in a config file, consider encryption.
 * Never store production keys in source control. Use a build-time or deploy-time transform, config db, or service that limited people have access to.
-
-## PCI Considerations
-* Never store credit card numbers or CVVs in a system.
-* Try to "piggy back" on a payment gateway's PCI compliance. Example: post credit card data directly from the browser to the gateway, instead of routing the credit card information through an application or service.
-* Payment authorization token, last for digits of a CC number, card type, expiration date, and authorization id may be stored in a system.
-* Always use SSL when dealing with financial transactions.
