@@ -27,9 +27,12 @@ The following naming conventions should be adhered to on all new codebases. Try 
 * Curly braces should always be on the next line, except within razor view templates, auto properties, empty constructors, or one-liner lambdas.
 * Always use braces with if statements.
 * Use the var keyword whenever possible to reduce "type noise" and to reduce the impact of refactoring. It is OK to specify the type if you think the code needs it to avoid a misunderstanding.
+* Do not use deprecated methods and classes and/or deprecated libraries.
 * Declare variables within the scope they are used and directly prior to their use.
 * "public const" should only be used for things that will never change (such as the temperature water boils at). Use "public static readonly" when this is not the case. const may be used freely with private and internal values (as long as internals aren't made visible to another assembly that isn't a test assembly).
 * Do not use "Yoda Conditions".  
+
+
 
 Example: 
 
@@ -38,8 +41,11 @@ Example:
 	// Bad Yoda
 	if (null == foo) { }
 
+* Abstract I/O and third party calls unless it has been deemed ok otherwise.
+* Use Entity Framework for DB access unless otherwise approved.
 * Always dispose of objects marked as IDisposable. Scoping an IDisposable within a using block is a good idea unless the IDisposable's lifetime is managed externally, such as via an IoC container.
 	* Caveat: [Do not use using blocks with WCF proxies](http://msdn.microsoft.com/en-us/library/aa355056.aspx). 
+	* Caveat: You do not need to manually dispose of objects that have their lifetimes managed by an IoC container.
 * Classes should be laid out in the following order:  
 	1. Consts and fields ordered by access level*.
 	2. Nested classes enums ordered by access level.
@@ -88,6 +94,7 @@ Examples:
 ## Error Handling
 * Always use a top-level handler to catch and log unhandled exceptions at the application seam (in the global.asax.cs, in the main method, etc...)
 * Do not catch exceptions in application code unless you plan to do something about them. Defer catastrophic error handling and logging to the top level handler.
+* Log exceptions to log files or the event log. When in Azure log to Azure diagnostics + blob storage instead if possible.
 
 ## Builds and Configuration
 * Set builds to treat warnings as errors.
