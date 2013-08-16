@@ -101,3 +101,4 @@ Examples:
 * Do not hard code values that would benefit from being in configuration.
 * Do not store sensitive information in clear text in config files. Prefer retrieving such values out of a config database or service. If the values must be in a config file, consider encryption.
 * Never store production keys in source control. Use a build-time or deploy-time transform, config db, or service that limited people have access to.
+* Do not check in code that breaks the build. Use stash, shelve, or an unstable branch when you need to check in non-building code.
