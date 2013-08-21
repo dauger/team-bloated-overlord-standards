@@ -46,12 +46,17 @@ Example:
 * Always dispose of objects marked as IDisposable. Scoping an IDisposable within a using block is a good idea unless the IDisposable's lifetime is managed externally, such as via an IoC container.
 	* Caveat: [Do not use using blocks with WCF proxies](http://msdn.microsoft.com/en-us/library/aa355056.aspx). 
 	* Caveat: You do not need to manually dispose of objects that have their lifetimes managed by an IoC container.
-* Classes should be laid out in the following order:  
+* Classes, except data models, should have a logical layout given by the following. When it improves readability or understanding, alternate layouts can be used but the deviation should be documented and justified.
 	1. Consts and fields ordered by access level*.
-	2. Nested classes enums ordered by access level.
+	2. Nested classes/enums ordered by access level.
 	3. Properties ordered by access level.
 	4. Constructors ordered by access level, then by parameter count.
 	5. Methods ordered by access level, then by name, then by parameter count.
+* Data model classes, DB entities, viewmodels, etc.,  typically only define a single default constructor, public properties, and, potentially, public and private validation methods. These use an alternate layout:
+	1. Default constructor - if your class includes collections of related data entities, you consider initializing these to empty lists in the constructor to avoid complicated access logic.
+	2. Entity properties, including any foreign keys if exposed, ordered by access level.  Typically value types and strings.
+	3. Relations - typically references to other data model classes
+	4. Methods ordered by access level, then by name, then by parameter count.
 * Be mindful about access modifiers at the class and member level. Do not expose classes or members to the outside world unless you intend to.
 * Do not use regions (except in unit test classes where you want to group tests).
 * There should only be one class per file except for when a class is nested.
