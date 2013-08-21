@@ -53,7 +53,7 @@ Example:
 	4. Constructors ordered by access level, then by parameter count.
 	5. Methods ordered by access level, then by name, then by parameter count.
 * Data model classes, DB entities, viewmodels, etc.,  typically only define a single default constructor, public properties, and, potentially, public and private validation methods. These use an alternate layout:
-	1. Default constructor - if your class includes collections of related data entities, you consider initializing these to empty lists in the constructor to avoid complicated access logic.
+	1. Default constructor - if your class includes collections of related data entities, consider initializing these to empty lists in the constructor to avoid complicated access logic.
 	2. Entity properties, including any foreign keys if exposed, ordered by access level.  Typically value types and strings.
 	3. Relations - typically references to other data model classes
 	4. Methods ordered by access level, then by name, then by parameter count.
