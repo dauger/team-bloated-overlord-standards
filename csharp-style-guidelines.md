@@ -51,7 +51,7 @@ Example:
 	2. Nested classes enums ordered by access level.
 	3. Properties ordered by access level.
 	4. Constructors ordered by access level, then by parameter count.
-	5. Methods ordered by access level, then by name, then by parameter count.
+	5. Methods ordered by access level. When overloads are present, group them by name and order them by param count if possible.
 * Be mindful about access modifiers at the class and member level. Do not expose classes or members to the outside world unless you intend to.
 * Do not use regions (except in unit test classes where you want to group tests).
 * There should only be one class per file except for when a class is nested.
