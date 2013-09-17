@@ -16,8 +16,7 @@ The following naming conventions should be adhered to on all new codebases. Try 
 * Prefix private fields with a "\_"
 * Use unabbreviated meaningful names. Exception: single letter variable names for loop counters and lambda parameters are OK.
 * Err or the side of names being too long rather than too short.
-* Abbreviations of two letters in length should have both letters capitalized. example: ```var userID = 1;```
-* Abbreviations of three or more letters should only have the the first letter capitalized. example: ```var expectedDob = DateTime.Now().AddMonths(9); ```
+* Abbreviations of two or more letters should only have the the first letter capitalized. examples: ```var expectedDob = DateTime.Now().AddMonths(9);``` ```var userId = 1;```
 * Interfaces should always be named starting with a capital "I" followed by a capital letter. Example ```public interface IEntity { }```
 
 ## General Coding Conventions
