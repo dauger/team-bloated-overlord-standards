@@ -16,12 +16,11 @@ The following naming conventions should be adhered to on all new codebases. Try 
 * Prefix private fields with a "\_"
 * Use unabbreviated meaningful names. Exception: single letter variable names for loop counters and lambda parameters are OK.
 * Err or the side of names being too long rather than too short.
-* Abbreviations of two letters in length should have both letters capitalized. example: ```var userID = 1;```
-* Abbreviations of three or more letters should only have the the first letter capitalized. example: ```var expectedDob = DateTime.Now().AddMonths(9); ```
+* Abbreviations of two or more letters should only have the the first letter capitalized. examples: ```var expectedDob = DateTime.Now().AddMonths(9);``` ```var userId = 1;```
 * Interfaces should always be named starting with a capital "I" followed by a capital letter. Example ```public interface IEntity { }```
 
 ## General Coding Conventions
-* Avoid files for "global" consts and enums. Try to hang constants and enums off of a relevant class. If this is not possible, create separate files per logical grouping. Example: ConsumerConstants, ProductConstants, etc...
+* Avoid files for "global" consts and enums. Try to hang constants and enums off of a relevant class. If this is not possible, create separate files per logical grouping. Example: ConsumerConstants, ProductConstants, etc...  
 * Always use system aliases for "primitive" types. Example: use "string" instead of "String".
 * Prefer collections over arrays, unless there is a specific performance problem.
 * Curly braces should always be on the next line, except within razor view templates, auto properties, empty constructors, or one-liner lambdas.
@@ -61,7 +60,8 @@ Example:
 * Do not use regions (except in unit test classes where you want to group tests).
 * There should only be one class per file except for when a class is nested.
 
-\* Access level ordering should always be: private, protected, internal, then public.
+\* Developers may use their judgement on when to deviate from these guidelines. Examples: unit test classes usually benefit from alternative layouts, auto or tool generated classes should be left alone in many cases, etc...  
+\*\* Access level ordering should always be: private, protected, internal, then public.
 
 Examples:
 
